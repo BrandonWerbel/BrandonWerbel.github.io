@@ -1,0 +1,74 @@
+@font-face{
+    font-family: Kanisah;
+    src: url('/assets/fonts/Kanisah.ttf');
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+}
+
+nav{
+    display: flex;
+}
+
+.right-nav{
+    position: absolute;
+    width: 80%;
+    right: 0;
+    margin: auto;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.left-nav {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.nav-item {
+    text-decoration: none;
+    font-family: Kanisah;
+    font-size: 30px;
+    line-height: 60px;
+    color: lightgrey;
+
+    padding-right: 20px;
+    padding-left: 20px;
+    
+    transition: background-color 0.3s;
+    border-radius: 10px;
+    margin: 20px;
+    margin-left: 0px;
+}
+
+.nav-item:hover{
+    background-color: lightskyblue;
+    color: darkgray;
+}
+
+#home-button {
+    left: 0%;
+}
+
+footer{
+	position: fixed;
+	font-size: 10px;
+	line-height: 30px;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(43, 42, 42, 0.424);
+	color: white;
+	text-align: center;
+}
