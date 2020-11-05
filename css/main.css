@@ -8,6 +8,7 @@ body{
 }
 
 header{
+    overflow: hidden;
     width: 100%;
     height: 100px;
     background-color: blue;
@@ -15,29 +16,31 @@ header{
 
 nav{
     display: flex;
+    overflow: hidden;
+}
+
+.right-nav, .left-nav {
+    position: absolute;
+    margin: auto;
+    display: inline-flex;
+    align-items: flex-start;
 }
 
 .right-nav{
-    position: absolute;
     width: 80%;
     right: 0;
-    margin: auto;
-    display: inline-flex;
-    align-items: flex-end;
     justify-content: flex-end;
 }
 
 .left-nav {
-    position: absolute;
-    left: 0;
     width: 100%;
-    margin: auto;
-    display: inline-flex;
-    align-items: flex-start;
+    left: 0;
+    padding-left: 20px;
     justify-content: flex-start;
 }
 
 .nav-item {
+    position: relative;
     text-decoration: none;
     font-family: Kanisah;
     font-size: 30px;
@@ -58,8 +61,52 @@ nav{
     color: darkgray;
 }
 
-#home-button {
-    left: 0%;
+.nav-item:hover .nav-dropdown {
+    display: block;
+}
+
+.nav-item.has-children {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.nav-dropdown {
+    list-style-type: none;
+    display: none;
+    width: 100%;
+    position: absolute;
+    margin: 0px;
+    padding: 0;
+    left: 0;
+    height: min-content;
+    padding-inline-start: 0px;
+}
+
+.nav-dropdown li {
+    width: 100%;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+.dropdown-item {
+    display: block;
+    background-color: blue;
+    color: lightgrey;
+    left: 0;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    height: min-content;
+    width: 100%;
+}
+
+.last-dropdown-item {
+    border-radius: 0px 0px 10px 10px;
+}
+
+.dropdown-item:hover{
+    background-color: lightskyblue;
+    color: darkgray;
+    transition: background-color 0.3s;
 }
 
 footer{
