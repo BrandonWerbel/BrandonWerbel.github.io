@@ -1,0 +1,57 @@
+@font-face{
+    font-family: Kanisah;
+    src: url('/assets/fonts/Kanisah.ttf');
+}
+
+.background{
+    background-image: url(/assets/images/jerusalem-background.jpg);
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 100px;
+    height: calc(100% - 100px);
+    width: 100%;
+}
+
+#welcome-message {
+    position: absolute;
+    margin: calc(50vh - 220px);
+    font-size: 200px;
+    text-align: center;
+    vertical-align: middle;
+
+    background-image: linear-gradient(180deg, rgb(122, 122, 255), rgb(255, 208, 122));
+    font-family: 'Kanisah';
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
+
+}
+
+#shadow-welcome-message {
+    position: absolute;
+    margin: calc(50vh - 220px);
+    font-size: 200px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Kanisah';
+    color: rgba(0, 0, 0, 0.5);
+    transform: translate(5px, 5px);
+}
+
+.container {
+    position: relative;
+    background-color: rgba(0, 0, 255, 0.6);
+    margin: 150px 200px 70px;
+    padding: 50px;
+    height: calc(100% - 50px);
+    width: calc(100% - 400px);
+    font-size: 30px;
+    color: white;
+}
+
+.picture {
+    float: left;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
