@@ -41,4 +41,6 @@ jobs:
           
       # Runs the script
       - name: Run Script
-        run: python _subscription_process/automation.py
+        run: |
+          cd _subscription_process
+          python automation.py
