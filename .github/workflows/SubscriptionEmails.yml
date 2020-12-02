@@ -6,7 +6,7 @@ name: SubscriptionEmails
 on:
   #Runs when a file in specified path is changed
   push:
-    paths: '_blog_post/**'
+    paths: '_blog_posts/**'
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
