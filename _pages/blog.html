@@ -1,0 +1,39 @@
+---
+layout: default
+title: Blog
+permalink: /blog
+stylesheets:
+  - blog
+---
+
+<div class="background" alt=""></div>
+  <!-- Gets length of array minus 1 -->
+  {% assign number = site.blog_posts | size | minus: 1 %}
+  <!-- gets last post in array -->
+  {% assign post = site.blog_posts[number] %}
+  <!-- <div class="post-list" id="first-post-list">
+    <div class="post-item" id="first-post-item">
+      <a class="post-link" href="{{ post.url }}">
+        <img class="post-image" src="{{ post.main-image }}" alt="">
+        <br>
+        <p><h2 class="post-title">{{ post.title }}</h2></a>
+          <i>Posted by {{ post.author.name }} on {{ post.date | date: '%b %-d, %Y' }}</i>
+        <br>{{ post.description }}</p>
+    </div>
+  </div> -->
+
+<ul class="container">
+  {% for post in site.blog_posts reversed %}
+    <li class="post-list">
+      <div class="post-item">
+        <a class="post-link" href="{{ post.url }}">
+          <img class="post-image" src="{{ post.main-image }}" alt="">
+          <br>
+          <p><h2 class="post-title">{{ post.title }}</h2></a>
+            Posted by {{ post.author.name }}
+            <br>{{ post.date | date: '%B %-d, %Y' }}
+          <br><i>{{ post.description }}</i></p>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

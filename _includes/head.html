@@ -3,10 +3,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" name ="{{ page.description }}">
     <link rel="icon" href="/assets/images/icon.png">
-    <title>{{ page.title }}</title>
+    {% if layout.title %}
+        <title>{{ layout.title }} - {{ page.title }}</title>
+    {% else %}
+        <title>{{ page.title }}</title>
+    {% endif %}
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
     {% if page.stylesheets %}
         {% for stylesheet in page.stylesheets %}
+            <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ stylesheet }}.css">
+        {% endfor %}
+    {% endif %}
+    {% if layout.stylesheets %}
+        {% for stylesheet in layout.stylesheets %}
             <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ stylesheet }}.css">
         {% endfor %}
     {% endif %}

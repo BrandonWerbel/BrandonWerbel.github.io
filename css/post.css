@@ -1,0 +1,136 @@
+@font-face{
+    font-family: Merriweather;
+    src: url('/assets/fonts/Merriweather-Light.ttf');
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+#background-tint {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.container {
+    display: inline-flex;
+    width: (100%);
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: Merriweather;
+}
+
+.container > * {
+    margin: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    position: relative;
+}
+
+#menu {
+    background-color: var(--transparent-gray);
+    position: sticky;
+    top: 120px;
+    height: min-content;
+    padding: 20px;
+    min-width: 200px;
+    list-style-type: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: calc(100vh - 200px);
+}
+
+.menu-item {
+    margin-bottom: 10px;
+    background-color: rgba(158, 158, 158, 0.85);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.menu-post-link{
+    text-decoration: none;
+    color: black;
+    transition: color 0.1s;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 0;
+}
+
+.menu-post-link:hover{
+    color: var(--transparent-gray);
+}
+
+.menu-post-image {
+    width: 100%;
+}
+
+.text{
+    background-color: var(--transparent-gray);
+    height: max-content;
+    padding: 50px 80px;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+.sidebar{
+    background-color: var(--purple-color);
+    height: min-content;
+    padding: 20px;
+    font-size: 21px;
+    position: sticky;
+    top: 120px;
+}
+
+#title{
+    text-align: center;
+}
+
+#profile-pic{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+#top-image {
+    width: 100%;
+}
+
+button{
+    font: inherit;
+    background-color: var(--transparent-gray);
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.1s;
+    padding: 10px 20px 10px 20px;
+}
+
+#next-button{
+    float: right;
+}
+
+#menu-button {
+    position: fixed;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    top: 120px;
+    left: 30px;
+    font-size: 25px;
+    transition: font-size 0.1s;
+}
+
+#menu-button:hover{
+    font-size: 40px;
+}
+
+button:hover{
+    background-color: rgba(158, 158, 158, 0.85);
+}

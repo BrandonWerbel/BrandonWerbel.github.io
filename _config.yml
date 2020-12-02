@@ -33,13 +33,28 @@ theme: minima
 plugins:
   - jekyll-feed
 
-defaults:
-  -
-    values:
-      author: "Brandon Werbel"
-
 include:
  - _pages
+ - _blog_posts
+
+collections:
+  blog_posts:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      author: 
+        name: "Brandon Werbel"
+        picture-url: "/assets/images/brandon-profile.jpg"
+  -
+    scope:
+      path: ""
+      type: "blog_posts"
+    values:
+      layout: "post"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
