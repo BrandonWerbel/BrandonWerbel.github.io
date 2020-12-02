@@ -21,14 +21,24 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # Sets up python
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.x'
+          architecture: 'x64'
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # Installs Python Dependencies
+      - name: Install Dependencies
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          python -m pip install --upgrade pip
+          pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+          pip install pybase64
+          pip install email-to
+          
+      # Runs the script
+      - name: Run Script
+        run: python _subscription_process/automation.py
