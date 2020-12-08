@@ -26,7 +26,7 @@ jobs:
 
       # Decrypts email credentials for use
       - name: Decrypt Credentials
-        run: ./.github/scripts/decrypt-credentials.sh
+        run: ./_subscription_process/decrypt-credentials.sh
         env:
           CREDENTIALS_PASSPHRASE: ${{ secrets.CREDENTIALS_PASSPHRASE }}
         
