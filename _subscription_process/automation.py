@@ -8,7 +8,7 @@ You are getting this email because you are subscribed to Brandon Werbel's Israel
 If you would like to unsubscribe from this site, respond to this email saying so. There is not currently an automated way to do so, but it should be coming soon!"""
 
 
-with open('subscriber_list.txt', 'r') as subscribers:
+with open('../subscriber_list.txt', 'r') as subscribers:
     subsArray = subscribers.readlines()
     for line in subsArray[:len(subsArray) - 1]:
         line = line[0: len(line) - 1]

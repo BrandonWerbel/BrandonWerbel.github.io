@@ -24,6 +24,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      # Decrypts email credentials for use
+      - name: Decrypt Credentials
+        run: ./.github/scripts/decrypt-credentials.sh
+        env:
+          LARGE_SECRET_PASSPHRASE: ${{ secrets.CREDENTIALS_PASSPHRASE }}
+        
       # Sets up python
       - name: Setup Python
         uses: actions/setup-python@v1
