@@ -28,7 +28,7 @@ jobs:
       - name: Decrypt Credentials
         run: ./.github/scripts/decrypt-credentials.sh
         env:
-          LARGE_SECRET_PASSPHRASE: ${{ secrets.CREDENTIALS_PASSPHRASE }}
+          CREDENTIALS_PASSPHRASE_PASSPHRASE: ${{ secrets.CREDENTIALS_PASSPHRASE }}
         
       # Sets up python
       - name: Setup Python
