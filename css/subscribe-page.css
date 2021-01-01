@@ -1,0 +1,21 @@
+.wrapper{
+    background-color: lightslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-outline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    background-color: var(--transparent-gray);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#form{
+    border: none;
+}
