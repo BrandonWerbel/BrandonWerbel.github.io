@@ -1,20 +1,21 @@
 <header>
-    <nav>
+    <nav id="nav">
+        <div id="open-close-menu">≡</div>
         <div class="left-nav">
-            <a class="nav-item" href="/"> Home</a>
+            <div class="nav-item" onclick="window.location='/';">Home</div>
         </div>
     
         <div class="right-nav">
-            <a class="nav-item" href="/blog">Blog</a>
-            <a class="nav-item" href="/gallery">Gallery</a>
-            <span class="nav-item has-children">
+            <div class="nav-item" onclick="window.location='/blog';">Blog</div>
+            <div class="nav-item" onclick="window.location='/gallery';">Gallery</div>
+            <div class="nav-item has-children">
                 External Links
                 <ul class="nav-dropdown">
                     <li><a class="dropdown-item last-dropdown-item" href="https://try.ramah.org.il/" target="_blank">Official TRY Website</a></li>
                 </ul>
-            </span>
-            <a class="nav-item" href="/subscribe">Subscribe</a>
-            <a class="nav-item" href="/about">About</a>
+            </div>
+            <div class="nav-item" onclick="window.location='/subscribe';">Subscribe</div>
+            <div class="nav-item" onclick="window.location='/about';">About</div>
         </div>
     </nav>
 </header>
