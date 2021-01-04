@@ -3,39 +3,48 @@
     src: url('/assets/fonts/Kanisah.ttf');
 }
 
-.background{
+.wrapper{
     background-image: url(/assets/images/jerusalem-background.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: right;
     position: fixed;
-    top: 100px;
-    height: calc(100% - 100px);
-    width: 100%;
 }
 
 #welcome-message {
-    position: absolute;
-    margin: calc(50vh - 220px);
-    font-size: 200px;
-    text-align: center;
-    vertical-align: middle;
-
     background-image: linear-gradient(180deg, rgb(122, 122, 255), rgb(255, 208, 122));
-    font-family: 'Kanisah';
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 2;
+    transform: translate(0, calc(30vh - 100px));
+}
 
+#welcome-message, #shadow-welcome-message {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    font-size: 200px;
+    text-align: center;
+    font-family: 'Kanisah';
 }
 
 #shadow-welcome-message {
-    position: absolute;
-    margin: calc(50vh - 220px);
-    font-size: 200px;
-    text-align: center;
-    vertical-align: middle;
-    font-family: 'Kanisah';
     color: rgba(0, 0, 0, 0.5);
-    transform: translate(5px, 5px);
+    transform: translate(5px, calc(30vh - 100px + 5px));
     user-select: none;
+}
+
+@media screen and (max-width: 1156px) {
+
+    #welcome-message, #shadow-welcome-message {
+        font-size: 17vw;
+    }
+
+    #welcome-message {
+        transform: translate(0, calc(30vh - 8.5vw));
+    }
+
+    #shadow-welcome-message {
+        transform: translate(5px, calc(30vh - 8.5vw + 5px));
+    }
+
 }
