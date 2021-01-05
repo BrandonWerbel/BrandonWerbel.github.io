@@ -12,11 +12,20 @@ menuButton.addEventListener('click', function() {
     }
 });
 
-window.onresize = function() {
+function globalOnResize() {
     if (window.innerWidth > 1156) {
         menu.style.visibility = "visible";
         menuButton.textContent = "≡";
     } else if (menuButton.textContent == "≡") {
         menu.style.visibility = "hidden";
+    }
+}
+
+window.onresize = function () {
+    globalOnResize();
+    try {
+        blogOnResize();
+    } catch (e) {
+
     }
 }

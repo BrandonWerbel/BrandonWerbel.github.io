@@ -9,8 +9,8 @@ scripts:
 <img src="/assets/images/blog-background.jpg" class="background" alt="">
 <div id="background-tint"></div>
 <button id="menu-button">►</button>
-<div class="container">
-    <div id="menu">
+<div class="container" id="large-screen">
+    <div class="menu">
         {% for post in site.blog_posts limit: 10 %}
         <li class="menu-item">
           <a href="{{ post.url }}"><img class="menu-post-image" src="{{ post.main-image }}" alt=""></a>
@@ -21,18 +21,48 @@ scripts:
       {% endfor %}
     </div>
     <div class="text">
-        <img id="top-image" src="{{ page.main-image }}" alt="">
-        <h1 id="title">{{ page.title }}</h1>
+        <img class="top-image" src="{{ page.main-image }}" alt="">
+        <h1 class="title">{{ page.title }}</h1>
         {{ content | markdownify }}
     </div>
     <div class="sidebar">
-        <img id="profile-pic" src="{{ page.author.picture-url }}" alt="">
+        <img class="profile-pic" src="{{ page.author.picture-url }}" alt="">
         <p>{{ page.author.name }}
             <br>
             {{ page.date | date: '%B %-d, %Y' }}
             <br>
         {{ page.location }}</p>
         <button>Prev</button>
-        <button id="next-button">Next</button>
+        <button class="next-button">Next</button>
     </div>
+</div>
+
+<div class="container" id="small-screen">
+  <div class="sidebars">
+    <div class="menu">
+      {% for post in site.blog_posts limit: 10 %}
+      <li class="menu-item">
+        <a href="{{ post.url }}"><img class="menu-post-image" src="{{ post.main-image }}" alt=""></a>
+        <p><h2><a class="menu-post-link" href="{{ post.url }}">{{ post.title }}</a></h2>
+          {{ post.date | date: '%b %-d %Y' }} <br>
+          <i>{{ post.description }}</i></p>
+      </li>
+      {% endfor %}
+    </div>
+    <div class="sidebar">
+      <img class="profile-pic" src="{{ page.author.picture-url }}" alt="">
+      <p>{{ page.author.name }}
+          <br>
+          {{ page.date | date: '%B %-d, %Y' }}
+          <br>
+      {{ page.location }}</p>
+      <button>Prev</button>
+      <button class="next-button">Next</button>
+    </div>
+  </div>
+  <div class="text">
+      <img class="top-image" src="{{ page.main-image }}" alt="">
+      <h1 class="title">{{ page.title }}</h1>
+      {{ content | markdownify }}
+  </div>
 </div>

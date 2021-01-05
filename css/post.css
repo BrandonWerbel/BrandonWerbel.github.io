@@ -28,6 +28,10 @@
     font-family: Merriweather;
 }
 
+#small-screen {
+    display: none;
+}
+
 .container > * {
     margin: 20px;
     margin-bottom: 50px;
@@ -35,7 +39,7 @@
     position: relative;
 }
 
-#menu {
+.menu {
     background-color: var(--transparent-gray);
     position: sticky;
     top: 120px;
@@ -80,26 +84,33 @@
     line-height: 150%;
 }
 
+#large-screen .text {
+    min-width: 200px;
+}
+
 .sidebar{
     background-color: var(--purple-color);
     height: min-content;
+    min-width: max-content;
     padding: 20px;
     font-size: 21px;
     position: sticky;
     top: 120px;
+    max-height: calc(100vh - 200px);
+    overflow-y: scroll;
 }
 
-#title{
+.title{
     text-align: center;
 }
 
-#profile-pic{
+.profile-pic{
     width: 200px;
     height: 200px;
     border-radius: 10px;
 }
 
-#top-image {
+.top-image {
     width: 100%;
 }
 
@@ -109,22 +120,22 @@ button{
     border: none;
     border-radius: 5px;
     transition: background-color 0.1s;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 10px;
 }
 
-#next-button{
+.next-button{
     float: right;
 }
 
 #menu-button {
     position: fixed;
-    width: max-content;
     height: max-content;
-    padding: 10px;
+    padding: 10px 15px;
     top: 120px;
     left: 30px;
     font-size: 25px;
     transition: font-size 0.1s;
+    z-index: 10;
 }
 
 #menu-button:hover{
@@ -133,4 +144,54 @@ button{
 
 button:hover{
     background-color: rgba(158, 158, 158, 0.85);
+}
+
+@media screen and (max-width: 1050px) {
+
+    .container {
+      display: block;
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    #small-screen {
+        display: block;
+    }
+
+    #large-screen {
+        display: none;
+    }
+
+    .text{
+        padding: 20px 30px;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+        width: 200px;
+        margin-left: auto;
+        margin-right: 0;
+        border-radius: 10px;
+    }
+
+    .sidebars {
+        display: flex;
+        max-width: calc(100vw - 40px);
+        overflow: scroll;
+    }
+
+    .menu {
+        width: 50%;
+        border-radius: 10px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 577px){
+    .menu{
+        position: fixed;
+        z-index: 9;
+        width: calc(100% - 120px);
+    }
 }
