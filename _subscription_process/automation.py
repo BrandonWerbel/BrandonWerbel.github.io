@@ -9,7 +9,6 @@ If you would like to unsubscribe from this site, respond to this email saying so
 
 emails = gs.get_emails()
 
-for email in emails:
-    print(email)
-    # message = gs.create_message('me', email, 'New Post in Brandon\'s Blog!', message_body)
-    # gs.send_message('me', message)
+# for email in emails:
+message = gs.create_message('me', 'brandon@werbel.org', 'New Post in Brandon\'s Blog!', message_body)
+gs.send_message('me', message)
