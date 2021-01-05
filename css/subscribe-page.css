@@ -19,3 +19,15 @@
 #form{
     border: none;
 }
+
+@media screen and (max-width: 1200px) {
+    #form-outline {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #form-outline {
+        width: 75%;
+    }
+}
