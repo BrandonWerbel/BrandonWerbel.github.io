@@ -1,6 +1,7 @@
 .container{
     margin-bottom: 30px;
     text-align: center;
+    padding: 0;
 }
 
 .background{
@@ -52,4 +53,11 @@
 
 .post-title:hover{
     color: rgba(158, 158, 158, 0.85);
+}
+
+@media screen and (max-width: 330px) {
+    .post-item {
+        width: 65vw;
+        padding: 10px 10vw;
+    }
 }
