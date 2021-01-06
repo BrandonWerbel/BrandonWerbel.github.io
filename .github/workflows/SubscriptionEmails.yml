@@ -24,7 +24,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         uses: jitterbit/get-changed-files@v1
-          id: abc
           with:
             format: space-delimited
             token: ${{ secrets.GITHUB_TOKEN }}
@@ -37,6 +36,7 @@ jobs:
 
       # Finds what file were changed in the last commit
       - name: Get Files Changed
+        id: abc
         run: ./_subscription_process/get_changed_files.sh
         
       # Sets up python
