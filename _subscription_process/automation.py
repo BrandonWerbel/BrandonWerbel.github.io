@@ -30,10 +30,10 @@ message_body_plain = open("message_body_plain.txt", "r").read().format(highestDa
 
 message_body_html = open("message_body_html.txt", "r").read().format(highestDate)
 
-# emails = gs.get_emails()
+emails = gs.get_emails()
 
-message = gs.create_message_html('me', 'brandon@werbel.org', 'New Post in Brandon\'s Blog!', message_body_plain, message_body_html)
-gs.send_message('me', message)
-# for email in emails:
-#     message = gs.create_message('me', email, 'New Post in Brandon\'s Blog!', message_body_plain, message_body_html)
-#     gs.send_message('me', message)
+# message = gs.create_message_html('me', 'brandon@werbel.org', 'New Post in Brandon\'s Blog!', message_body_plain, message_body_html)
+# gs.send_message('me', message)
+for email in emails:
+    message = gs.create_message('me', email, 'New Post in Brandon\'s Blog!', message_body_plain, message_body_html)
+    gs.send_message('me', message)
