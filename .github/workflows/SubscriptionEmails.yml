@@ -28,6 +28,7 @@ jobs:
         uses: jitterbit/get-changed-files@v1
         with:
           format: 'space-delimited'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # Decrypts email credentials for use
       - name: Decrypt Credentials
