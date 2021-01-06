@@ -32,11 +32,10 @@ jobs:
 
       # Finds what file were changed in the last commit
       - name: Get Files Changed
+      - id: files
         uses: jitterbit/get-changed-files@v1
-          id: abc
-          with:
-            format: space-delimited
-            token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          format: ''
         run: ./_subscription_process/get_changed_files.sh
         
       # Sets up python
