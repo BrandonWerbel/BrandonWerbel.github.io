@@ -24,11 +24,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - id: Jitterbug
+      - name: Get All Changed Files
         uses: jitterbit/get-changed-files@v1
+        id: abc
         with:
-          format: 'space-delimited'
+          format: space-delimited
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      # - id: Jitterbug
+      #   uses: jitterbit/get-changed-files@v1
+      #   with:
+      #     format: 'space-delimited'
+      #     token: ${{ secrets.GITHUB_TOKEN }}
 
       # Decrypts email credentials for use
       - name: Decrypt Credentials
