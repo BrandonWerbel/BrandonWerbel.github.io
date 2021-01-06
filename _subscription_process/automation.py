@@ -5,7 +5,7 @@ gs = GapiSetup()
 
 names = []
 try:
-    f = open("file_names.txt", "r")
+    f = open("../file_names.txt", "r")
 except:
     pass
 else:
