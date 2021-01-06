@@ -24,11 +24,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Jitterbug
-        id: files
-          uses: jitterbit/get-changed-files@v1
-          with:
-            format: ''
+      - id: Jitterbug
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: ''
 
       # Decrypts email credentials for use
       - name: Decrypt Credentials
