@@ -23,10 +23,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
-        uses: jitterbit/get-changed-files@v1
-          with:
-            format: space-delimited
-            token: ${{ secrets.GITHUB_TOKEN }}
 
       # Decrypts email credentials for use
       - name: Decrypt Credentials
@@ -36,7 +32,11 @@ jobs:
 
       # Finds what file were changed in the last commit
       - name: Get Files Changed
-        id: abc
+        uses: jitterbit/get-changed-files@v1
+          id: abc
+          with:
+            format: space-delimited
+            token: ${{ secrets.GITHUB_TOKEN }}
         run: ./_subscription_process/get_changed_files.sh
         
       # Sets up python
