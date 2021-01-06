@@ -27,7 +27,7 @@ jobs:
       - id: Jitterbug
         uses: jitterbit/get-changed-files@v1
         with:
-          format: ''
+          format: 'space-delimited'
 
       # Decrypts email credentials for use
       - name: Decrypt Credentials
