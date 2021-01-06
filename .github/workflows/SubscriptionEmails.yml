@@ -24,6 +24,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Jitterbug
+        id: files
+          uses: jitterbit/get-changed-files@v1
+          with:
+            format: ''
+
       # Decrypts email credentials for use
       - name: Decrypt Credentials
         run: ./_subscription_process/decrypt-credentials.sh
@@ -32,10 +38,6 @@ jobs:
 
       # Finds what file were changed in the last commit
       - name: Get Files Changed
-        id: files
-        uses: jitterbit/get-changed-files@v1
-        with:
-          format: ''
         run: ./_subscription_process/get_changed_files.sh
         
       # Sets up python
