@@ -9,8 +9,7 @@ try:
 except:
     print('wrong file name')
 else:
-    for line in f:
-        names.append(line)
+    names = f.read().split()
 print(names)
 
 post_names = []
