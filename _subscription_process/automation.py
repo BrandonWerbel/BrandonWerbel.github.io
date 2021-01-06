@@ -7,7 +7,7 @@ names = []
 try:
     f = open("../file_names.txt", "r")
 except:
-    pass
+    print('wrong file name')
 else:
     for line in f:
         names.append(line)
