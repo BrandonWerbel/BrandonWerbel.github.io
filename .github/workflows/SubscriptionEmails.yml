@@ -30,13 +30,9 @@ jobs:
         env:
           CREDENTIALS_PASSPHRASE: ${{ secrets.CREDENTIALS_PASSPHRASE }}
 
+      # Finds what file were changed in the last commit
       - name: Get Files Changed
-        run: |
-          touch file_names.txt
-          files_changed=$(git diff-tree --no-commit-id --name-only -r $(git log --format="%H" -n 1))
-          echo "$files_changed" > file_names.txt
-          
-          
+        run: ./_subscription_process/get_changed_files.sh
         
       # Sets up python
       - name: Setup Python
