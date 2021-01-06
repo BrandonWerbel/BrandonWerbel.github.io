@@ -29,6 +29,14 @@ jobs:
         run: ./_subscription_process/decrypt-credentials.sh
         env:
           CREDENTIALS_PASSPHRASE: ${{ secrets.CREDENTIALS_PASSPHRASE }}
+
+      - name: Get Files Changed
+        run: |
+          touch file_names.txt
+          files_changed=$(git diff-tree --no-commit-id --name-only -r $(git log --format="%H" -n 1))
+          echo "$files_changed" > file_names.txt
+          
+          
         
       # Sets up python
       - name: Setup Python

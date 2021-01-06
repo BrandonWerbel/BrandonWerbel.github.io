@@ -5,6 +5,7 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from pybase64 import urlsafe_b64encode
 from googleapiclient.errors import HttpError
 
@@ -56,6 +57,22 @@ class GapiSetup:
         message['to'] = to
         message['from'] = sender
         message['subject'] = subject
+        raw = urlsafe_b64encode(message.as_bytes())
+        raw = raw.decode()
+        return {'raw': raw}
+
+    def create_message_html(self, sender, to, subject, message_text, html_message_text):
+        message = MIMEMultipart("alternative")
+        message["To"] = to
+        message["From"] = sender
+        message["Subject"] = subject
+
+        plainText = MIMEText(message_text, "plain")
+        htmlText = MIMEText(html_message_text, "html")
+        
+        message.attach(plainText)
+        message.attach(htmlText)
+
         raw = urlsafe_b64encode(message.as_bytes())
         raw = raw.decode()
         return {'raw': raw}

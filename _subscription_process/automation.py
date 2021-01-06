@@ -1,14 +1,39 @@
 from GapiSetup import GapiSetup
+from datetime import datetime
 
 gs = GapiSetup()
-message_body = """Hello there!
 
-You are getting this email because you are subscribed to Brandon Werbel's Israel Blog. There has just been a new post, check it out!
+names = []
+try:
+    f = open("file_names.txt", "r")
+except:
+    pass
+else:
+    for line in f:
+        names.append(line)
 
-If you would like to unsubscribe from this site, respond to this email saying so. There is not currently an automated way to do so, but it should be coming soon!"""
+post_names = []
+for name in names:
+    if name[:12] == "_blog_posts/":
+        post_names.append(name[12:22])
 
-emails = gs.get_emails()
+highestTimestamp = 0.0
+highestDate = ""
+for name in post_names:
+    date = datetime.strptime(name, '%Y-%m-%d')
+    timestamp = datetime.timestamp(date)
+    if timestamp > highestTimestamp:
+        highestTimestamp = timestamp
+        highestDate = name
 
-for email in emails:
-    message = gs.create_message('me', email, 'New Post in Brandon\'s Blog!', message_body)
-    gs.send_message('me', message)
+message_body_plain = open("message_body_plain.txt", "r").read().format(highestDate)
+
+message_body_html = open("message_body_html.txt", "r").read().format(highestDate)
+
+# emails = gs.get_emails()
+
+message = gs.create_message_html('me', 'brandon@werbel.org', 'New Post in Brandon\'s Blog!', message_body_plain, message_body_html)
+gs.send_message('me', message)
+# for email in emails:
+#     message = gs.create_message('me', email, 'New Post in Brandon\'s Blog!', message_body_plain, message_body_html)
+#     gs.send_message('me', message)
