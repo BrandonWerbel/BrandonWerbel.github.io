@@ -11,6 +11,7 @@ except:
 else:
     for line in f:
         names.append(line)
+print(names)
 
 post_names = []
 for name in names:
