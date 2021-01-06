@@ -37,7 +37,7 @@ jobs:
 
       # Finds what file were changed in the last commit
       - name: Get Files Changed
-        run: ./_subscription_process/get_changed_files.sh
+        run: echo ${{ steps.Jitterbug.outputs.all }}
         
       # Sets up python
       - name: Setup Python
