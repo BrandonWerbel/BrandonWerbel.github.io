@@ -32,7 +32,7 @@ jobs:
 
       # Finds what file were changed in the last commit
       - name: Get Files Changed
-      - id: files
+        id: files
         uses: jitterbit/get-changed-files@v1
         with:
           format: ''
