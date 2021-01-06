@@ -39,7 +39,7 @@ jobs:
       - name: Get Files Changed
         run: |
           touch file_names.txt
-#          files_changed=${{ steps.Jitterbug.outputs.all }}
+          files_changed=${{ steps.Jitterbug.outputs.all }}
 #          echo "$files_changed" > file_names.txt
 #          echo "::debug:: $files_changed"
         
