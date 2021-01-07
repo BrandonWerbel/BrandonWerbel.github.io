@@ -2,7 +2,7 @@
   <body>
     Hello there!
     <br><br>
-    You are getting this email because you are subscribed to <a href="blog.brandon.werbel.org">Brandon Werbel's Israel Blog</a>. There has just been a <a href="blog.brandon.werbel.org/blog/{}">new post</a>, check it out!
+    You are getting this email because you are subscribed to <a href="https://blog.brandon.werbel.org">Brandon Werbel's Israel Blog</a>. There has just been a <a href="https://blog.brandon.werbel.org/blog/{}">new post</a>, check it out!
     <br><br>
     If you would like to unsubscribe from this site, respond to this email saying so. There is not currently an automated way to do so, but it should be coming soon!
   </body>

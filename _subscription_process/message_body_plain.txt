@@ -1,5 +1,5 @@
 Hello there!
 
-You are getting this email because you are subscribed to Brandon Werbel's Israel Blog [blog.brandon.werbel.org]. There has just been a new post [{}], check it out!
+You are getting this email because you are subscribed to Brandon Werbel's Israel Blog [https://blog.brandon.werbel.org]. There has just been a new post [https://blog.brandon.werbel.org/blog/{}], check it out!
 
 If you would like to unsubscribe from this site, respond to this email saying so. There is not currently an automated way to do so, but it should be coming soon!
