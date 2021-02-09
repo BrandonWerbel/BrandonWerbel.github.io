@@ -84,6 +84,17 @@
     line-height: 150%;
 }
 
+p {
+    text-indent: 50px;
+}
+
+.caption{
+    font-style: italic;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
 #large-screen .text {
     min-width: 200px;
 }
@@ -102,6 +113,7 @@
 
 .title{
     text-align: center;
+    line-height: 50px;
 }
 
 .profile-pic{
@@ -111,6 +123,11 @@
 }
 
 .top-image {
+    width: 100%;
+    text-indent: 0;
+}
+
+img {
     width: 100%;
 }
 

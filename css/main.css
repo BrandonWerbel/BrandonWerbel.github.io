@@ -25,7 +25,7 @@ header{
     top: 0;
     width: 100%;
     height: 100px;
-    background-color: blue;
+    background-color: rgb(122, 122, 255);
 }
 
 #nav{
@@ -49,7 +49,7 @@ header{
 .left-nav {
     width: 100%;
     left: 0;
-    padding-left: 20px;
+    padding-left: 10px;
     justify-content: flex-start;
 }
 
@@ -68,15 +68,16 @@ header{
     padding-right: 20px;
     padding-left: 20px;
     
-    transition: background-color 0.3s;
+    transition: background-color 0.08s;
     border-radius: 10px;
-    margin: 20px;
+    margin: 10px;
     margin-left: 0px;
+    margin-top: 20px;
 }
 
 .nav-item:hover{
-    background-color: lightskyblue;
-    color: darkgray;
+    background-color: rgb(152, 152, 255);
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -109,7 +110,7 @@ header{
 
 .dropdown-item {
     display: block;
-    background-color: blue;
+    background-color: rgb(122, 122, 255);
     color: lightgrey;
     left: 0;
     margin: 0;
@@ -124,9 +125,9 @@ header{
 }
 
 .dropdown-item:hover{
-    background-color: lightskyblue;
-    color: darkgray;
-    transition: background-color 0.3s;
+    background-color: rgb(152, 152, 255);
+    color: white;
+    transition: background-color 0.08s;
 }
 
 footer{
@@ -162,7 +163,7 @@ footer{
         height: max-content;
         display: block;
         width: min-content;
-        background-color: blue;
+        background-color: rgb(122, 122, 255);
         overflow-y: scroll;
         max-height: 100vh;
         border-radius: 0px 0px 10px 10px;
@@ -203,8 +204,8 @@ footer{
     }
 
     #open-close-menu:hover{
-        background-color: lightskyblue;
-        color: darkgray;
+        background-color: rgb(152, 152, 255);
+        color: rgb(255, 255, 255);
         cursor: pointer;
     }
 }

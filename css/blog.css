@@ -16,7 +16,7 @@
     left: 0;
     position: fixed;
     z-index: -1;
-    background-color: slategray;
+    background-color: rgba(158, 158, 158, 0.85);
 }
 
 .post-list{
