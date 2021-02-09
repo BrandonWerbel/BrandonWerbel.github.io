@@ -35,9 +35,9 @@
 }
 
 
-/* #first-post-item{
-    width: 540px;
-} */
+#first-post-item{
+    width: 300px;
+}
 
 .post-image{
     width: 100%;

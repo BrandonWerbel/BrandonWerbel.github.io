@@ -11,29 +11,33 @@ stylesheets:
   {% assign number = site.blog_posts | size | minus: 1 %}
   <!-- gets last post in array -->
   {% assign post = site.blog_posts[number] %}
-  <!-- <div class="post-list" id="first-post-list">
+
+
+<ul class="container">
+  <div class="post-list" id="first-post-list">
     <div class="post-item" id="first-post-item">
       <a class="post-link" href="{{ post.url }}">
         <img class="post-image" src="{{ post.main-image }}" alt="">
         <br>
-        <p><h2 class="post-title">{{ post.title }}</h2></a>
-          <i>Posted by {{ post.author.name }} on {{ post.date | date: '%b %-d, %Y' }}</i>
-        <br>{{ post.description }}</p>
+        <p><h1 class="post-title">{{ post.title }}</h1></a>
+          Posted by {{ post.author.name }}
+          <br>{{ post.date | date: '%B %-d, %Y' }}
+        <br><i>{{ post.description }}</i></p>
     </div>
-  </div> -->
-
-<ul class="container">
+  </div>
   {% for post in site.blog_posts reversed %}
-    <li class="post-list">
-      <div class="post-item">
-        <a class="post-link" href="{{ post.url }}">
-          <img class="post-image" src="{{ post.main-image }}" alt="">
-          <br>
-          <p><h2 class="post-title">{{ post.title }}</h2></a>
-            Posted by {{ post.author.name }}
-            <br>{{ post.date | date: '%B %-d, %Y' }}
-          <br><i>{{ post.description }}</i></p>
-      </div>
-    </li>
+    {% if forloop.first == false %}
+      <li class="post-list">
+        <div class="post-item">
+          <a class="post-link" href="{{ post.url }}">
+            <img class="post-image" src="{{ post.main-image }}" alt="">
+            <br>
+            <p><h2 class="post-title">{{ post.title }}</h2></a>
+              Posted by {{ post.author.name }}
+              <br>{{ post.date | date: '%B %-d, %Y' }}
+            <br><i>{{ post.description }}</i></p>
+        </div>
+      </li>
+    {% endif %}
   {% endfor %}
 </ul>
