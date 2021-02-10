@@ -88,6 +88,10 @@ p {
     text-indent: 50px;
 }
 
+.post-info {
+    text-indent: 0px;
+}
+
 .caption{
     font-style: italic;
     font-size: 18px;
@@ -120,6 +124,8 @@ p {
     width: 200px;
     height: 200px;
     border-radius: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
 .top-image {
