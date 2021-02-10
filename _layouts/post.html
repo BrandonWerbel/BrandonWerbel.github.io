@@ -32,8 +32,22 @@ scripts:
             {{ page.date | date: '%B %-d, %Y' }}
             <br>
         {{ page.location }}</p>
-        <button>Prev</button>
-        <button class="next-button">Next</button>
+
+        {% for post in site.blog_posts %}
+        {% if page.date == post.date %}
+          {% assign prev_index = forloop.index0 | minus: 1 %}
+          {% assign next_index = forloop.index0 | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+       {% if prev_index >= 0 %}
+        {% assign date = site.blog_posts[prev_index].date | date: "%Y-%m-%d" %}
+        <button onclick="location.href = '/blog/{{ date }}'">Prev</button>
+       {% endif %}
+       {% if next_index < site.blog_posts.size %}
+        {% assign date = site.blog_posts[next_index].date | date: "%Y-%m-%d" %}
+        <button class="next-button" onclick="location.href = '/blog/{{ date }}'">Next</button>
+       {% endif %}
     </div>
 </div>
 
@@ -56,8 +70,22 @@ scripts:
           {{ page.date | date: '%B %-d, %Y' }}
           <br>
       {{ page.location }}</p>
-      <button>Prev</button>
-      <button class="next-button">Next</button>
+
+      {% for post in site.blog_posts %}
+        {% if page.date == post.date %}
+          {% assign prev_index = forloop.index0 | minus: 1 %}
+          {% assign next_index = forloop.index0 | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+       {% if prev_index >= 0 %}
+        {% assign date = site.blog_posts[prev_index].date | date: "%Y-%m-%d" %}
+        <button onclick="location.href = '/blog/{{ date }}'">Prev</button>
+       {% endif %}
+       {% if next_index < site.blog_posts.size %}
+        {% assign date = site.blog_posts[next_index].date | date: "%Y-%m-%d" %}
+        <button class="next-button" onclick="location.href = '/blog/{{ date }}'">Next</button>
+       {% endif %}
     </div>
   </div>
   <div class="text">
