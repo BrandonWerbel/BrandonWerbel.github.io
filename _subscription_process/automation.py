@@ -17,7 +17,7 @@ for name in names:
     if name[:12] == "_blog_posts/":
         post_names.append(name[12:22])
 
-if len(post_names > 0):
+if len(post_names) > 0:
     highestTimestamp = 0.0
     highestDate = ""
     for name in post_names:
