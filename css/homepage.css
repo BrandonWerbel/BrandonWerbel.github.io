@@ -35,18 +35,11 @@
     user-select: none;
 }
 
-@media screen and (max-width: 1156px) {
+@media screen and (max-width: 450px) {
 
     #welcome-message, #shadow-welcome-message {
-        font-size: 17vw;
-    }
-
-    #welcome-message {
-        transform: translate(0, calc(30vh - 8.5vw));
-    }
-
-    #shadow-welcome-message {
-        transform: translate(5px, calc(30vh - 8.5vw + 5px));
+        font-size: 16vw;
+        margin-left: 10px;
     }
 
 }
