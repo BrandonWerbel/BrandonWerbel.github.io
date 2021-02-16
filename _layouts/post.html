@@ -11,7 +11,7 @@ scripts:
 <button id="menu-button">►</button>
 <div class="container" id="large-screen">
     <div class="menu">
-        {% for post in site.blog_posts limit: 10 %}
+        {% for post in site.blog_posts reversed limit: 10 %}
         <li class="menu-item">
           <a href="{{ post.url }}"><img class="menu-post-image" src="{{ post.main-image }}" alt=""></a>
           <p><h2><a class="menu-post-link" href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -54,7 +54,7 @@ scripts:
 <div class="container" id="small-screen">
   <div class="sidebars">
     <div class="menu">
-      {% for post in site.blog_posts limit: 10 %}
+      {% for post in site.blog_posts reversed limit: 10 %}
       <li class="menu-item">
         <a href="{{ post.url }}"><img class="menu-post-image" src="{{ post.main-image }}" alt=""></a>
         <p><h2><a class="menu-post-link" href="{{ post.url }}">{{ post.title }}</a></h2>
