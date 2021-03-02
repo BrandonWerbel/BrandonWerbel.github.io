@@ -20,18 +20,20 @@ scripts:
         </li>
       {% endfor %}
     </div>
-    <div class="text">
+    <div class="container">
+      <div class="text">
         <img class="top-image" src="{{ page.main-image }}" alt="">
         <h1 class="title">{{ page.title }}</h1>
         {{ content | markdownify }}
+      </div>
     </div>
     <div class="sidebar">
         <img class="profile-pic" src="{{ page.author.picture-url }}" alt="">
-        <p class="post-info">{{ page.author.name }}
+        <p class="post-info"><div style="max-width: 200px;">{{ page.author.name }}
             <br>
             {{ page.date | date: '%B %-d, %Y' }}
             <br>
-        {{ page.location }}</p>
+        {{ page.location }}</div></p>
 
         {% for post in site.blog_posts %}
         {% if page.date == post.date %}
